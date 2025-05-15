@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "mN0expZC40K0fzGE1HlVKxo9XiBHntpsOhCyEzzpk0g=",
+  "Source": "ArcFaceBackend",
+  "BasePath": "_content/ArcFaceBackend",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
