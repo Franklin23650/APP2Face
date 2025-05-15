@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ArcFaceBackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52b2e48c31c2dd6c36c233813295bd7c116e45da")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e95c3beff6fcb8384d8fdfd584f9668560319e8")]
 [assembly: System.Reflection.AssemblyProductAttribute("ArcFaceBackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ArcFaceBackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
