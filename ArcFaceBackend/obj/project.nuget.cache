@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KhNMtoYmhtg=",
+  "dgSpecHash": "sCV1oPn8EW8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Franklin_Trabajo\\OneDrive\\Escritorio\\backapp\\ArcFaceBackend\\ArcFaceBackend.csproj",
+  "projectFilePath": "C:\\Users\\Franklin_Trabajo\\OneDrive\\Escritorio\\APP2Face\\APP2Face\\ArcFaceBackend\\ArcFaceBackend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Franklin_Trabajo\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.2\\microsoft.aspnetcore.openapi.9.0.2.nupkg.sha512",
     "C:\\Users\\Franklin_Trabajo\\.nuget\\packages\\microsoft.ml.onnxruntime\\1.22.0\\microsoft.ml.onnxruntime.1.22.0.nupkg.sha512",

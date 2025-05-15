@@ -477,11 +477,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Franklin_Trabajo\\OneDrive\\Escritorio\\backapp\\ArcFaceBackend\\ArcFaceBackend.csproj",
+      "projectUniqueName": "C:\\Users\\Franklin_Trabajo\\OneDrive\\Escritorio\\APP2Face\\APP2Face\\ArcFaceBackend\\ArcFaceBackend.csproj",
       "projectName": "ArcFaceBackend",
-      "projectPath": "C:\\Users\\Franklin_Trabajo\\OneDrive\\Escritorio\\backapp\\ArcFaceBackend\\ArcFaceBackend.csproj",
+      "projectPath": "C:\\Users\\Franklin_Trabajo\\OneDrive\\Escritorio\\APP2Face\\APP2Face\\ArcFaceBackend\\ArcFaceBackend.csproj",
       "packagesPath": "C:\\Users\\Franklin_Trabajo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Franklin_Trabajo\\OneDrive\\Escritorio\\backapp\\ArcFaceBackend\\obj\\",
+      "outputPath": "C:\\Users\\Franklin_Trabajo\\OneDrive\\Escritorio\\APP2Face\\APP2Face\\ArcFaceBackend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
