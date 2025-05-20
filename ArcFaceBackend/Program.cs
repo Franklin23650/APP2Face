@@ -1,22 +1,32 @@
+using Microsoft.ML.OnnxRuntime;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+// Habilita Swagger/OpenAPI
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+builder.Services.AddSingleton<InferenceSession>(sp =>
+{
+    var modelPath = Path.Combine(AppContext.BaseDirectory, "Models/arcface.onnx");
+    if (!System.IO.File.Exists(modelPath))
+        throw new InvalidOperationException("El modelo no se encontró en la ruta especificada.");
+    return new InferenceSession(modelPath);
+});
 
 var app = builder.Build();
 
-app.MapControllers();
-app.Run();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
+// Habilita Swagger en desarrollo
+//if (app.Environment.IsDevelopment() || app.Environment.IsStaging() || app.Environment.IsProduction())
+//{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+//}
 
 app.UseHttpsRedirection();
+
+app.MapControllers();
 
 var summaries = new[]
 {
@@ -25,7 +35,7 @@ var summaries = new[]
 
 app.MapGet("/weatherforecast", () =>
 {
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
+    var forecast = Enumerable.Range(1, 5).Select(index =>
         new WeatherForecast
         (
             DateOnly.FromDateTime(DateTime.Now.AddDays(index)),

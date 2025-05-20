@@ -13,35 +13,33 @@ namespace ArcFaceBackend.Controllers
     {
         private readonly InferenceSession _session;
 
-        public FaceController()
+        // El modelo se inyecta por dependencia
+        public FaceController(InferenceSession session)
         {
-            // Cargar el modelo ArcFace
-            _session = new InferenceSession("obj/Models/arcface.onnx");
+            _session = session;
         }
 
         [HttpPost("compare")]
-        public IActionResult CompareFaces([FromForm] IFormFile image1, [FromForm] IFormFile image2)
+        public IActionResult CompareFaces([FromForm] FaceCompareRequest request)
         {
-            if (image1 == null || image2 == null)
+            if (request.Image1 == null || request.Image2 == null)
             {
                 return BadRequest("Ambas imágenes son necesarias.");
             }
 
             try
             {
-                // Convertir las imágenes a embeddings
-                var embedding1 = GetFaceEmbedding(image1);
-                var embedding2 = GetFaceEmbedding(image2);
+                var embedding1 = GetFaceEmbedding(request.Image1);
+                var embedding2 = GetFaceEmbedding(request.Image2);
 
                 if (embedding1 == null || embedding2 == null)
                 {
                     return BadRequest("No se detectaron rostros en una o ambas imágenes.");
                 }
 
-                // Calcular la similitud coseno entre los embeddings
                 var similarity = CalculateCosineSimilarity(embedding1, embedding2);
 
-                return Ok(new { similarity = similarity * 100 }); // Retorna el porcentaje de similitud
+                return Ok(new { similarity = similarity * 100 });
             }
             catch (Exception ex)
             {
