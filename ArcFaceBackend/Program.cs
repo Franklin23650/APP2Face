@@ -41,7 +41,7 @@ app.UseSwaggerUI();
 //}
 
 // Usa la política de CORS antes de MapControllers
-app.UseCors("AllowFrontend");
+app.UseCors(corsPolicy);
 
 app.UseHttpsRedirection();
 
