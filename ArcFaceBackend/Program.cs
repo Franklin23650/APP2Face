@@ -7,6 +7,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Configura CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy =>
+        {
+            policy.WithOrigins("https://localhost") // Cambia esta URL por la de tu frontend
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
 builder.Services.AddSingleton<InferenceSession>(sp =>
 {
     var modelPath = Path.Combine(AppContext.BaseDirectory, "Models/arcface.onnx");
@@ -20,9 +32,12 @@ var app = builder.Build();
 // Habilita Swagger en desarrollo
 //if (app.Environment.IsDevelopment() || app.Environment.IsStaging() || app.Environment.IsProduction())
 //{
-    app.UseSwagger();
-    app.UseSwaggerUI();
+app.UseSwagger();
+app.UseSwaggerUI();
 //}
+
+// Usa la política de CORS antes de MapControllers
+app.UseCors("AllowFrontend");
 
 app.UseHttpsRedirection();
 
